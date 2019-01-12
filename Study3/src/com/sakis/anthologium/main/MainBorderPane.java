@@ -28,8 +28,8 @@ public class MainBorderPane extends BorderPane{
 	 * Constructor
 	 * This is going to draw the main application window 
 	 */
-	public MainBorderPane() {
-		
+	public MainBorderPane() 
+	{
 		// first get the stylesheet 
 		final String cssString = getClass().getResource("/com/sakis/anthologium/css/StyleSheet.css").toExternalForm();
 		getStylesheets().add(cssString);
