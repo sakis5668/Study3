@@ -1,11 +1,15 @@
 package com.sakis.anthologium.main;
 
+import java.util.Optional;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXButton.ButtonType;
 import com.sakis.anthologium.photos.PhotosController;
 import com.sakis.anthologium.photos.PhotosModel;
 import com.sakis.anthologium.photos.PhotosView;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -115,24 +119,50 @@ public class MainBorderPane extends BorderPane{
 		
 	}
 
+	
+	/**
+	 * Handle the Photo overview button
+	 */
 	private void handlePhotoOverview() {
 		setCenter(null);
 		PhotosController photosController = new PhotosController(new PhotosView(), new PhotosModel());
 		setCenter(photosController.getView());
 	}
 
+	
+	/**
+	 * Handle the actors button
+	 */
 	private void handleActors() {
 		setCenter(null);
 	}
 
+	/**
+	 * Handle the songs overview button
+	 */
 	private void handleSongs() {
 		setCenter(null);
 	}
 
+	
+	/**
+	 *  Handle the exit button 
+	 */
 	private void handleExit() {
-		System.exit(0);
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setContentText("Confirm");
+        alert.setHeaderText("Are you sure you want to exit ?");
+        alert.setContentText("Press OK to really exit ...");
+        Optional<javafx.scene.control.ButtonType> result = alert.showAndWait();
+        if (result.get()==javafx.scene.control.ButtonType.OK) {
+        	System.exit(0);
+        }
 	}
 
+	
+	/**
+	 * Handle the minimize button
+	 */
 	private void handleMinimize() {
 		Anthologium.stage.setIconified(true);
 	}
