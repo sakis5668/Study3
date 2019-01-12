@@ -16,7 +16,7 @@ public class Anthologium extends Application {
 			Scene scene = new Scene(root,1200,800);
 			scene.setFill(null);
 			primaryStage.setScene(scene);
-			// primaryStage.initStyle(StageStyle.TRANSPARENT);
+			//primaryStage.initStyle(StageStyle.TRANSPARENT);
 			Anthologium.stage = primaryStage;
 			primaryStage.show();
 		} catch(Exception e) {
