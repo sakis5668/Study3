@@ -26,10 +26,10 @@ import javafx.util.Duration;
 public class DisplayShelf extends Region {
 	private final Duration DURATION = Duration.millis(500);
 	private final Interpolator INTERPOLATOR = Interpolator.EASE_BOTH;
-	private final double SPACING = 100;
+	private final double SPACING = 50;
 	private final double LEFT_OFFSET = -110;
 	private final double RIGHT_OFFSET = 110;
-	private final double SCALE_SMALL = 0.7;
+	private final double SCALE_SMALL = 0.4;
 	private PerspectiveImage[] items;
 	private Group centered = new Group();
 	private Group left = new Group();
@@ -45,7 +45,7 @@ public class DisplayShelf extends Region {
 	 * Constructor, needs an array of images 
 	 * @param images
 	 */
-	public DisplayShelf(Image[] images) 
+	public DisplayShelf(ObservableList<Image> images) 
 	{
 		// set clip
 		setClip(clip);
@@ -53,11 +53,11 @@ public class DisplayShelf extends Region {
 		// set id's for css
 		setId("displayshelf");
 		scrollBar.setId("display-scrollbar");
-
+		
 		// create items
-		items = new PerspectiveImage[images.length];
-		for (int i = 0; i < images.length; i++) {
-			final PerspectiveImage item = items[i] = new PerspectiveImage(images[i]);
+		items = new PerspectiveImage[images.size()];
+		for (int i = 0; i < images.size(); i++) {
+			final PerspectiveImage item = items[i] = new PerspectiveImage(images.get(i));
 			final double index = i;
 			item.setOnMouseClicked((MouseEvent me) -> {
 				localChange = true;
@@ -68,6 +68,7 @@ public class DisplayShelf extends Region {
 		}
 
 		// setup scrollbar
+		scrollBar.setFocusTraversable(true);
 		scrollBar.setMax(items.length - 1);
 		scrollBar.setVisibleAmount(1);
 		scrollBar.setUnitIncrement(1);
@@ -210,13 +211,11 @@ public class DisplayShelf extends Region {
 	/**
 	 * A node that displays an image with some 2.5D perspective rotation around the
 	 * y axis.
-	 * 
-	 * @author Isaak Tosounidis
 	 *
 	 */
 	private class PerspectiveImage extends Parent {
-		private static final double REFLECTION_SIZE = 0.25;
-		public static final double WIDTH = 200;
+		private static final double REFLECTION_SIZE = 0.15;
+		public static final double WIDTH = 400;
 		public static final double HEIGHT = WIDTH + (WIDTH * REFLECTION_SIZE);
 		private static final double RADIUS_H = WIDTH / 2;
 		private static final double BACK = WIDTH / 10;

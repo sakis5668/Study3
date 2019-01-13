@@ -5,9 +5,12 @@ import java.util.Optional;
 import com.sakis.anthologium.photos.PhotosController;
 import com.sakis.anthologium.photos.PhotosModel;
 import com.sakis.anthologium.photos.PhotosView;
+import com.sun.javafx.iio.ImageStorage;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 
 @SuppressWarnings("unused")
 public class AnthologiumController 
@@ -39,7 +42,9 @@ public class AnthologiumController
 	private void handlePhotoOverview() 
 	{
 		view.setCenter(null);
-		PhotosController photosController = new PhotosController(new PhotosView(), new PhotosModel());
+		PhotosModel model = new PhotosModel();
+		ObservableList<Image> images = model.getCurrentImagesList();
+		PhotosController photosController = new PhotosController(new PhotosView(images), model);
 		view.setCenter(photosController.getView());
 	}
 

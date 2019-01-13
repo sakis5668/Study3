@@ -2,7 +2,9 @@
 }
 
 .photooverview-pane {
-	-fx-background-color: #4C525C ;
+}
+
+.testbox {
 }
 
 .button {
@@ -19,3 +21,43 @@
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 5, 4, 3;
 }
+
+.btn-sidebar {
+	-fx-pref-width: 200;
+}
+
+#leftvbox {
+	-fx-pref-width: 1000;
+	-fx-padding: 5 5 5 5;
+}
+
+#innerhbox {
+	-fx-spacing: 15;
+}
+
+#rightvbox {
+	-fx-pref-width: 200;
+	-fx-padding: 5 5 5 5;
+	-fx-spacing: 15;
+}
+
+#rightvbox .button {
+	-fx-pref-width: 180;
+	-fx-pref-height: 54;
+} 
+
+
+#displayshelf {
+    -fx-background-color: linear-gradient(to bottom, black 60, #141414 60.1%, black 100%);
+}
+ 
+#display-scrollbar {
+    -fx-base: #202020;
+    -fx-background: #4f4747;
+    -fx-border-color: #707576;
+}
+ 
+#display-scrollbar .thumb {
+    -fx-background-color: #707576;
+}
+

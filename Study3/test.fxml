@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="54.0" prefWidth="1113.0" HBox.hgrow="ALWAYS">
+               <items>
+                  <JFXButton buttonType="RAISED" text="Photos">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Documents/com.visualpharm.Icons8/windows/Photo%20and%20Video/32/b0a79b/icons8-stack_of_photos.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0">
+                           <image>
+                              <Image url="@../../../../../Documents/com.visualpharm.Icons8/windows/People/32/b0a79b/icons8-businessman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <ImageView fitHeight="32.0" fitWidth="32.0">
+                     <image>
+                        <Image url="@../../../../../Documents/com.visualpharm.Icons8/windows/Folders/32/b0a79b/icons8-photos_folder.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" />
+                  <JFXButton buttonType="RAISED">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0">
+                           <image>
+                              <Image url="@../../../../../Documents/com.visualpharm.Icons8/windows/Computer%20Hardware/32/b0a79b/icons8-shutdown.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </items>
+            </ToolBar>
+            <ToolBar>
+               <items>
+                  <JFXButton buttonType="RAISED" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0">
+                           <image>
+                              <Image url="@../../../../../Documents/com.visualpharm.Icons8/windows/User%20Interface/32/b0a79b/icons8-minimize_window.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </items>
+            </ToolBar>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefWidth="1000.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox spacing="15.0">
+                     <children>
+                        <ImageView>
+                           <image>
+                              <Image url="@../../../../../Documents/com.visualpharm.Icons8/windows/Popular%20Icons/32/b0a79b/icons8-search.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField maxWidth="-Infinity" onKeyPressed="#keyPressed" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children></VBox>
+            <VBox prefWidth="200.0" spacing="15.0">
+               <children>
+                  <JFXButton buttonType="RAISED" prefHeight="35.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" prefHeight="35.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" prefHeight="35.0" prefWidth="200.0" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
